@@ -1,0 +1,3 @@
+https://github.com/fastai/courses/blob/master/deeplearning2/neural-style.ipynb
+
+https://github.com/aleju/papers/blob/master/neural-nets/A_Neural_Algorithm_for_Artistic_Style.md
