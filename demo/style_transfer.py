@@ -212,12 +212,10 @@ beta = 40
 
 model = load_vgg_model("imagenet-vgg-verydeep-19.mat")
 
-content_image = scipy.misc.imread("pabellon1.jpg")
-imshow(content_image)
+content_image = scipy.misc.imread("contents/pabellon1.jpg")
 content_image = reshape_and_normalize_image(content_image)
 
-style_image = scipy.misc.imread("picasso.jpg")
-imshow(style_image)
+style_image = scipy.misc.imread("styles/picasso.jpg")
 style_image = reshape_and_normalize_image(style_image)
 
 
@@ -229,7 +227,6 @@ STYLE_LAYERS = [
     ('conv5_1', 0.2)]
 
 generated_image = generate_noise_image(content_image)
-imshow(generated_image[0])
 
 sess.run(model['input'].assign(content_image))
 
