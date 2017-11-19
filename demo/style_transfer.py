@@ -165,7 +165,7 @@ def total_cost(J_content, J_style, alpha = 10, beta = 40):
     return J
 
 
-def model_nn(sess, input_image, num_iterations = 200):
+def model_nn(sess, input_image, num_iterations = 1000):
     
     # Initialize global variables (you need to run the session on the initializer)
     sess.run(tf.global_variables_initializer())
@@ -208,14 +208,14 @@ def model_nn(sess, input_image, num_iterations = 200):
 sess = tf.InteractiveSession()
 
 alpha = 10
-beta = 40
+beta = 90
 
 model = load_vgg_model("imagenet-vgg-verydeep-19.mat")
 
 content_image = scipy.misc.imread("contents/pabellon1.jpg")
 content_image = reshape_and_normalize_image(content_image)
 
-style_image = scipy.misc.imread("styles/picasso.jpg")
+style_image = scipy.misc.imread("styles/van_gogh.jpg")
 style_image = reshape_and_normalize_image(style_image)
 
 
