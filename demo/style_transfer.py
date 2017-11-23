@@ -182,14 +182,14 @@ def model_nn(sess, input_image, num_iterations = 1000):
         generated_image = sess.run(model['input'])
 
         # Print every 20 iteration.
-        if i%20 == 0:
+        if i%50 == 0:
             Jt, Jc, Js = sess.run([J, J_content, J_style])
             print("Iteration " + str(i) + " :")
             print("total cost = " + str(Jt))
             print("content cost = " + str(Jc))
             print("style cost = " + str(Js))
             
-            #save_image(str(i) + ".png", generated_image)
+            save_image(str(i) + ".png", generated_image)
     
     # save last generated image
     save_image('generated_image.jpg', generated_image)
@@ -212,10 +212,10 @@ beta = 90
 
 model = load_vgg_model("imagenet-vgg-verydeep-19.mat")
 
-content_image = scipy.misc.imread("contents/pabellon1.jpg")
+content_image = scipy.misc.imread("contents/pipa.jpg")
 content_image = reshape_and_normalize_image(content_image)
 
-style_image = scipy.misc.imread("styles/van_gogh.jpg")
+style_image = scipy.misc.imread("styles/index.jpeg")
 style_image = reshape_and_normalize_image(style_image)
 
 
