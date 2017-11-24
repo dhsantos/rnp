@@ -215,7 +215,7 @@ model = load_vgg_model("imagenet-vgg-verydeep-19.mat")
 content_image = scipy.misc.imread("contents/pipa.jpg")
 content_image = reshape_and_normalize_image(content_image)
 
-style_image = scipy.misc.imread("styles/index.jpeg")
+style_image = scipy.misc.imread("styles/van_gogh.jpg")
 style_image = reshape_and_normalize_image(style_image)
 
 
