@@ -26,12 +26,12 @@ class configuracion:
     def __init__(self):
         #--------------------------------------------
         #------Parametros
-        self.imagen = "contents/rosana.jpeg"
-        self.estilo = "styles/luces.jpg"
+        self.imagen = "contents/marian.jpeg"
+        self.estilo = "styles/retrato2.jpeg"
         self.redConv = "imagenet-vgg-verydeep-19.mat"
         self.alfa = 20
         self.beta = 80
-        self.iteraciones = 30
+        self.iteraciones = 150
         self.learningRate = 2.0
 
     def cambiar_valor(self, clave, valor):
@@ -239,16 +239,16 @@ def model_nn(sess, input_image, num_iterations, model, train_step, J, J_content,
         _ = sess.run(train_step)
         generated_image = sess.run(model['input'])
 
-        if i%50 == 0:
+        if i%10 == 0:
             Jt, Jc, Js = sess.run([J, J_content, J_style])
             print("Iteration " + str(i) + " :")
             print("total cost = " + str(Jt))
             print("content cost = " + str(Jc))
             print("style cost = " + str(Js))
             
-            save_image(str(i) + ".png", generated_image)
+            save_image("iteracion - " + str(i) + ".png", generated_image)
     
-    save_image('generated_image.jpg', generated_image)
+    save_image('resultado.jpg', generated_image)
     
     return generated_image
 
